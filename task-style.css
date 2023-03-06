@@ -1,0 +1,24 @@
+html {
+  background-color: #6fddaf;
+  background-size: 3px;
+  font-family: Arial, sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.wrapper {
+  width: 800px;
+  margin: 100px auto;
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: #fff;
+  margin: 0;
+  margin-bottom: 15px;
+}

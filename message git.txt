@@ -1,0 +1,7 @@
+D:/!_Projects/js-tasks' is owned by:
+        'S-1-5-21-1274891267-1716778096-2444118638-1000'
+but the current user is:
+        'S-1-5-21-1569339431-45597888-1342559402-1001'
+To add an exception for this directory, call:
+
+        git config --global --add safe.directory 'D:/'\!'_Projects/js-tasks'
