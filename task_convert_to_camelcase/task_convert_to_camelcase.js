@@ -15,5 +15,6 @@ function convert(string) {
   return (arr.join(''));
 }
 
-console.log(convert(dashText));
+console.log(dashText, " =====> ", convert(dashText));
+console.log(underscoreText, " =====> ", convert(underscoreText));
 

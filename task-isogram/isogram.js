@@ -1,8 +1,9 @@
 let str = "moOse"; //
 
-console.log(isIsogram(str));
+console.log('isIsogram "', str, '" = ', isIsogram(str));
+console.log('isIsogram "', str, '" = ', isIsogram2(str));
 
-function isIsogram(str) {
+function isIsogram(str) {  // моя функция
 
   if (str.length == 0) {
     return true;
@@ -30,4 +31,8 @@ function isIsogram(str) {
     }
   }
         return true;
+}
+
+function isIsogram2(str) {  // подсмотрел 
+  return new Set(str.toUpperCase()).size == str.length;
 }
