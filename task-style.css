@@ -7,12 +7,12 @@ html {
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 .wrapper {
   width: 800px;
-  margin: 100px auto;
+  margin: 30px auto;
 }
 
 h1,
@@ -21,4 +21,24 @@ h2 {
   color: #fff;
   margin: 0;
   margin-bottom: 15px;
+}
+
+.container {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.btn {
+  font-size: 18px;
+  line-height: 160%;
+  color: #fff;
+  background-color: #59ce9d;
+  border: #034127 solid;
+}
+
+.message {
+  font-size: 14px;
+  color: #661414;
+  border: #034127 solid;
+  background-color: #d8cecefa;
 }
