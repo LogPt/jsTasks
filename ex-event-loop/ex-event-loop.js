@@ -8,14 +8,15 @@ fillText('code starts');
 
 function fillText(str) {
   let message = "<p>" + str + "</p>";
+  text.style.display = 'block';
   text.innerHTML += message;
 };
 
 function firstFun() {
-console.log('firstFun inside  secondFun starts');
-fillText('firstFun inside  secondFun starts');
-console.log('firstFun inside  secondFun ends');
-fillText('firstFun inside  secondFun ends');
+  console.log('firstFun inside  secondFun starts');
+  fillText('firstFun inside  secondFun starts');
+  console.log('firstFun inside  secondFun ends');
+  fillText('firstFun inside  secondFun ends');
 };
 
 function secondFun() {
@@ -34,9 +35,9 @@ function someFunction() {
   setTimeout(() => {
     console.log('Timeout 3s finished');
     fillText('Timeout 3s finished');
-   }, 3000);
-   console.log('someFunction ends');
-   fillText('someFunction ends');
+  }, 3000);
+  console.log('someFunction ends');
+  fillText('someFunction ends');
 }
 
 btnSync.addEventListener('click', secondFun);
@@ -45,6 +46,8 @@ btnAsync.addEventListener('click', someFunction);
 
 clear.addEventListener('click', () => {
   text.innerHTML = null;
+  text.style.display = 'none';
+
 });
 
 console.log('code ends');
