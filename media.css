@@ -1,0 +1,38 @@
+@media (max-width: 1100px) {
+  .main__link {
+    margin-left: 10%;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+.header {
+   margin-top: 25px;
+}
+
+.main__list {
+  margin: 0;
+}
+
+.main__link {
+  margin: 0 20px;
+
+}
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .subtitle {
+    margin: 10px 0 5px 0;
+    font-size: 20px;
+
+  }
+
+  .footer__link {
+    font-size: 14px;
+
+  }
+
+}
