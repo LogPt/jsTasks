@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../task-style.css">
+  <title>Callback functions</title>
+</head>
+
+<body>
+<h1>Callback или Колбек - функция обратного вызова</h1>
+
+  <p>Callback - функция обратного вызова. Мы передаем в функцию в качестве аргумента другую функцию, которую надо
+    вызвать внутри нее.</p>
+  <p>Что это дает? Гибкость! Мы не связываемся жестко с какой-либо функцией, которую надо вызвать из другой, а делаем ее
+    "переменной".</p>
+  <p>Можем использовать где угодно, не обязательно c ассинхронным программированием.</p>
+  <p><a href="https://youtu.be/dNhCSC-yJ2A">Самое простое объяснение Callback-функций - видео Александра Лущенко</a></p>
+  <p>Прочитать, как используются коллбеки для написания ассинхронного кода можно <a
+      href="https://learn.javascript.ru/callbacks">здесь</a>. </p>
+      <p>Коллбеки использовались до внедрения Promise. «Колбэк с первым аргументом-ошибкой» («error-first callback»)</p>
+      <p>
+        script.onload = () => callback(null, script);<br>
+        script.onerror = () => callback(new Error(`Не удалось загрузить скрипт ${src}`));
+      </p>
+
+  <script src="ex-callback.js"></script>
+
+</body>
+
+</html>
