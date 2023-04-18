@@ -4,33 +4,42 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../reset.css">
   <link rel="stylesheet" href="../task-style.css">
+  <link rel="stylesheet" href="../media.css">
   <title>ООП в JavaScript</title>
 </head>
 
 <body>
 
-  <h1>ООП в JavaScript</h1>
-  <h2>Результат - в консоли </h2>
+  <div class="wrapper">
 
-  <p><a href="https://youtu.be/43MrCq0DXQc" target="_blank">Видеоурок Sam Diy. ООП в JavaScript</a></p>
-  <p><a href="https://youtu.be/CbOfxzRM9aw" target="_blank">Видеоурок Миши Ларченко. ООП в JavaScript</a></p>
-  <p><a href="https://youtube.com/playlist?list=PLM7wFzahDYnHyRpmcSGOptXan08CNb9nh" target="_blank">Видеоуроки WebDev       (Алекс Лущенко).       ООП в JavaScript</a></p>
-  <p><a href="https://youtu.be/-6DWwR_R4Xk" target="_blank">Видеоурок UlBi TV. ООП в JavaScript на простых примерах.</a>
-  </p>
-  <p><a href="https://youtu.be/VjGdjqyXbhg" target="_blank">Видеоурок webDev (Евгений Ковальчук) TV. Просто о ООП (Парадигмы ООП).</a>
-  </p>
+    <h1>ООП в JavaScript</h1>
+    <h2>Результат - в консоли </h2>
+
+    <p><a href="https://youtu.be/43MrCq0DXQc" target="_blank">Видеоурок Sam Diy. ООП в JavaScript</a></p>
+    <p><a href="https://youtu.be/CbOfxzRM9aw" target="_blank">Видеоурок Миши Ларченко. ООП в JavaScript</a></p>
+    <p><a href="https://youtube.com/playlist?list=PLM7wFzahDYnHyRpmcSGOptXan08CNb9nh" target="_blank">Видеоуроки WebDev
+        (Алекс Лущенко). ООП в JavaScript</a></p>
+    <p><a href="https://youtu.be/-6DWwR_R4Xk" target="_blank">Видеоурок UlBi TV. ООП в JavaScript на простых
+        примерах.</a>
+    </p>
+    <p><a href="https://youtu.be/VjGdjqyXbhg" target="_blank">Видеоурок webDev (Евгений Ковальчук) TV. Просто о ООП
+        (Парадигмы ООП).</a>
+    </p>
 
 
 
 
 
-  <input value="Нажимаем для объекта" type="button" onclick="buttonClick()"> </input>
-  <input value="Нажимаем для класса" type="button" onclick="buttonClick2()"> </input>
-  <input value="Перебираем объект циклом for in" type="button" onclick="buttonClick3()"> </input>
-  <button onclick="clearClick()">Очистить окно</button>
+    <input class="btn" value="Нажимаем для объекта" type="button" onclick="buttonClick()"> </input>
+    <input class="btn" value="Нажимаем для класса" type="button" onclick="buttonClick2()"> </input>
+    <input class="btn" value="Перебираем объект циклом for in" type="button" onclick="buttonClick3()"> </input>
+    <button class="btn" onclick="clearClick()">Очистить окно</button>
 
-  <div class="message" style="display: none;"></div>
+    <div class="message" style="display: none;"></div>
+
+  </div>
 
   <script src="ex-oop.js"></script>
 </body>

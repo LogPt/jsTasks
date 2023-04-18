@@ -1,0 +1,60 @@
+@media (300px <=width < 1000px) {
+
+
+
+  .header {
+    margin-top: 25px;
+  }
+
+  .menu {
+    font-size: 18px;
+  }
+
+  .main__link {
+    margin: 0 20px;
+    font-size: 20px;
+  }
+
+  .wrapper {
+    width: 80vw;
+    margin: 30px auto;
+  }
+
+  .message {
+
+  }
+
+  .btn {
+    margin: 10px;
+    font-size: 14px;
+  }
+
+}
+
+@media (width < 300px) {
+  .header {
+    margin-top: 25px;
+  }
+
+  .menu {
+    font-size: 14px;
+  }
+
+  .main__link {
+    margin: 0 20px;
+    font-size: 16px;
+  }
+
+  .wrapper {
+    width: 90vw;
+    margin: 10px auto;
+  }
+
+  .message {}
+
+  .btn {
+    margin: 10px;
+    font-size: 14px;
+  }
+
+}

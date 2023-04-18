@@ -4,22 +4,66 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../reset.css">
   <link rel="stylesheet" href="../task-style.css">
-  <title>isIsogram</title>
+  <link rel="stylesheet" href="../media.css">
+  <title>Запрос XMLHttpRequest</title>
 </head>
 
 <body>
-  <div class="wrapper">
-    <h1>Упражнения с запросами</h1>
+  <header class="header">
+    <nav class="header__top">
+      <ul class="menu">
+        <li class="menu__item"><a class="menu__link" href="#less1">Урок 1</a></li>
+        <li class="menu__item"><a class="menu__link" href="#less2">Урок 2</a></li>
+      </ul>
+    </nav>
+    <div class="header__title wrapper">
+      <h1>Упражнения с запросами XMLHttpRequest</h1>
+      
+    </div>
+  </header>
 
-    <h2>Результат - в консоли
-    </h2>
-    <p>
-      <a href="https://youtu.be/eKCD9djJQKc">Видеоурок Владилена Минина</a>
-    </p>
+  <main class="main">
+    <section class="section" id="less1">
+      <div class="wrapper">
+        <h2>
+          <a href="https://youtu.be/ZgH68Wg8M68">Видеоурок "AJAX/XHR" Алекса Лущенко</a>
+        </h2>
+        <h3>Результат - в окне браузера и в консоли</h3>
 
-    <script src="ex-request.js"></script>
-  </div>
+        <p>Отправляем запрос на адрес: https://jsonplaceholder.typicode.com/users</p>
+
+        <p>XMLHttpRequest - сам по себе устаревший метод. Есть более новый fetch</p>
+        <p>onreadystatechange - устаревшее свойство XMLHttpRequest. Более новые load/error/progress</p>
+
+        <input class="btn" value="GET-запрос & readyState" type="button" onclick="buttonClick1()"> </input>
+        <input class="btn" value="GET-запрос & load/error/progress" type="button" onclick="buttonClick2()"> </input>
+        <button class="btn" onclick="clearClick(message)">Очистить окно</button>
+
+        <div class="message"></div>
+      </div>
+    </section>
+
+    <section class="section" id="less2">
+      <div class="wrapper">
+        <h2>
+          <a href="https://youtu.be/eKCD9djJQKc">Видеоурок Владилена Минина</a>
+        </h2>
+        <h3>Результат - в окне браузера и в консоли</h3>
+        <input class="btn" value="POST-запрос внутри Promise" type="button" onclick="buttonClick3()"> </input>
+        <button class="btn" onclick="clearClick(message2)">Очистить окно</button>
+        <div class="message message2"></div>
+      </div>
+    </section>
+
+
+  </main>
+
+
+
+  <script src="ex-request2.js"></script>
+
 </body>
 
 </html>
