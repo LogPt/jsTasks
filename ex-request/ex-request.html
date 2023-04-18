@@ -6,63 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../reset.css">
   <link rel="stylesheet" href="../task-style.css">
-  <link rel="stylesheet" href="../media.css">
-  <title>Запрос XMLHttpRequest</title>
+  <title>Requests</title>
 </head>
 
 <body>
-  <header class="header">
-    <nav class="header__top">
-      <ul class="menu">
-        <li class="menu__item"><a class="menu__link" href="#less1">Урок 1</a></li>
-        <li class="menu__item"><a class="menu__link" href="#less2">Урок 2</a></li>
-      </ul>
-    </nav>
-    <div class="header__title wrapper">
-      <h1>Упражнения с запросами XMLHttpRequest</h1>
-      
+  <div class="wrapper">
+    <h1>Запросы на сервер. Fetch, XMLHttpRequest (XHR)</h1>
+    <h2>Результат - в консоли и/или в окне</h2>
+
+    <div class="container">
+      <p>
+        <a href="https://youtu.be/eKCD9djJQKc">Видеоурок Владилена Минина</a>
+      </p>
     </div>
-  </header>
 
-  <main class="main">
-    <section class="section" id="less1">
-      <div class="wrapper">
-        <h2>
-          <a href="https://youtu.be/ZgH68Wg8M68">Видеоурок "AJAX/XHR" Алекса Лущенко</a>
-        </h2>
-        <h3>Результат - в окне браузера и в консоли</h3>
+    <div class="container">
+      <button onclick="fetchGetClick()">Запрос Fetch GET</button>
+      <button onclick="fetchPostClick()">Запрос Fetch POST</button>
+      <button onclick="xhrGetClick()">Запрос XHR GET</button>
+      <button onclick="xhrPostClick()">Запрос XHR POST</button>
+    </div>
+    <div class="container">
+      <button onclick="clearClick()">Очистить окно</button>
+    </div>
 
-        <p>Отправляем запрос на адрес: https://jsonplaceholder.typicode.com/users</p>
-
-        <p>XMLHttpRequest - сам по себе устаревший метод. Есть более новый fetch</p>
-        <p>onreadystatechange - устаревшее свойство XMLHttpRequest. Более новые load/error/progress</p>
-
-        <input class="btn" value="GET-запрос & readyState" type="button" onclick="buttonClick1()"> </input>
-        <input class="btn" value="GET-запрос & load/error/progress" type="button" onclick="buttonClick2()"> </input>
-        <button class="btn" onclick="clearClick(message)">Очистить окно</button>
-
-        <div class="message"></div>
-      </div>
-    </section>
-
-    <section class="section" id="less2">
-      <div class="wrapper">
-        <h2>
-          <a href="https://youtu.be/eKCD9djJQKc">Видеоурок Владилена Минина</a>
-        </h2>
-        <h3>Результат - в окне браузера и в консоли</h3>
-        <input class="btn" value="POST-запрос внутри Promise" type="button" onclick="buttonClick3()"> </input>
-        <button class="btn" onclick="clearClick(message2)">Очистить окно</button>
-        <div class="message message2"></div>
-      </div>
-    </section>
-
-
-  </main>
-
-
-
-  <script src="ex-request2.js"></script>
+    <div class="message" style="display: none;"></div>
 
 </body>
 
