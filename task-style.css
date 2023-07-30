@@ -105,3 +105,56 @@ h3{
   border-radius: 10px;
   background-color: #dfd5d5fa;
 }
+
+:root{
+  --bs-body-color: #212529;
+}
+
+table {
+    --bs-table-color: var(--bs-body-color);
+    --bs-table-bg: transparent;
+    --bs-table-border-color: var(--bs-border-color);
+    --bs-table-accent-bg: transparent;
+    --bs-table-striped-color: var(--bs-body-color);
+    --bs-table-striped-bg: rgba(34, 34, 34, 0.05);
+    --bs-table-active-color: var(--bs-body-color);
+    --bs-table-active-bg: rgba(34, 34, 34, 0.1);
+    --bs-table-hover-color: var(--bs-body-color);
+    --bs-table-hover-bg: #F5F5F5;
+    width: 100%;
+    margin-bottom: 1rem;
+    color: var(--bs-table-color);
+    vertical-align: top;
+    border-color: var(--bs-table-border-color);
+}
+
+/* границы ячеек первого ряда таблицы */
+table{
+  /* display: flex;
+justify-content: center; */
+  /* width: 60%; */
+  margin: 0 auto;
+}
+
+table>thead {
+  vertical-align: center;
+  
+}
+
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th {
+
+  text-align: center;
+  border-color: inherit;
+  border-style: solid;
+  border-width: 1;
+}
+
+/* границы ячеек тела таблицы */
+.table>tbody {
+  vertical-align: inherit;
+}
