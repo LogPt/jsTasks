@@ -1,5 +1,8 @@
 const requestBTC = 'https://whattomine.com/coins/1.json?';
 const requestDGB = 'https://whattomine.com/coins/113.json?';
+const requestDASH = 'https://whattomine.com/coins/34.json?';
+
+// https: //whattomine.com/coins/34.json?hr=1290.0&p=3148.0&fee=0.0&cost=0.063&cost_currency=USD&hcost=0.0&span_br=&span_d=24
 
 const cost = 0.063;
 const miners = [
@@ -26,6 +29,12 @@ const coins = [{
     url: requestDGB
   }
 ];
+const dashMiner = {
+  name: 'Bitmain Antminer D7 1.29 Th',
+  hashRate: '1290',
+  power: '3148',
+  coin: 'DASH'
+}
 
 function sendRequest(method, url, body = null) {
   const param = {
@@ -43,16 +52,17 @@ function sendRequest(method, url, body = null) {
   }
   // console.log(param);
 
-  return fetch(url, param).then(responce => {
-    if (responce.ok) {
-      return responce.json()
-    } else
-      return responce.json().then(error => {
-        const er = new Error(`Ошибка ${error}`);
-        er.data = error;
-        throw er;
-      })
-  })
+  return fetch(url, param)
+    .then(responce => {
+      if (responce.ok) {
+        return responce.json()
+      } else
+        return responce.json().then(error => {
+          const er = new Error(`Ошибка ${error}`);
+          er.data = error;
+          throw er;
+        })
+    })
 };
 
 function clearClick() {
@@ -74,7 +84,7 @@ containerTable.style.margin = '0 auto';
 containerMessage.style.width = '60%';
 containerMessage.style.margin = '0 auto';
 
-function start() {
+async function start() {
 
   let now = new Date();
   let time = `${now.getDate()}.${now.getMonth()+1}.${now.getFullYear()}, ${now.getHours()}:${now.getMinutes()}`;
@@ -106,8 +116,10 @@ function start() {
   let tBody = table.createTBody();
   let coin = {};
 
+  // cycle for BTC and DGB for all SHA-256 miner 
   hashRate.forEach((hash, indexHash) => {
-    coins.forEach((el, indexCoin) => {
+    Promise.all(coins.map(async (el, indexCoin) => {
+      // coins.forEach((el, indexCoin) => {
       // await sleep(1000);
       let row = tBody.insertRow();
       if (indexCoin == 0) {
@@ -126,8 +138,8 @@ function start() {
       // cellProfit.classList.add('profit');
 
       let parameters = `hr=${hashRate[indexHash]}&p=${power[indexHash]}&fee=0.0&cost=${cost}&cost_currency=USD&hcost=0.0&span_br=&span_d=24`;
-     
-      sendRequest('GET', el.url + parameters)
+
+      await sendRequest('GET', el.url + parameters)
         .then(data => {
           Object.assign(coin, data);
           // console.log(el.name, coin);
@@ -138,10 +150,44 @@ function start() {
           console.log(err);
         });
 
-    });
+      await timerPromise(1500);
+
+
+    }));
   });
+  // block for DASH miner
+  let row = tBody.insertRow();
+  let cellMiner = row.insertCell();
+  cellMiner.innerHTML = dashMiner.name;
+  let cellHashRate = row.insertCell();
+  cellHashRate.innerHTML = dashMiner.hashRate;
+  let cellCoin = row.insertCell();
+  cellCoin.innerHTML = dashMiner.coin;
+  let cellProfit = row.insertCell();
+  let parameters = `hr=${dashMiner.hashRate}&p=${dashMiner.power}&fee=0.0&cost=${cost}&cost_currency=USD&hcost=0.0&span_br=&span_d=24`;
+  // console.log(parameters);
+  await sendRequest('GET', requestDASH + parameters)
+    .then(data => {
+      Object.assign(coin, data);
+      cellProfit.innerHTML = coin.profit;
+    })
+    .then(() => timerPromise(5000))
+    // .then(() => console.log('DASH done!'))
+    .catch(err => {
+      console.log(err);
+    });
+
 };
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms))
-};
+const timerPromise = (timeOut) =>
+  new Promise((resolve, reject) =>
+    setTimeout(() => resolve(), timeOut))
+
+
+// async function getProfitData() {
+
+// }
+
+// function sleep(ms) {
+//   return new Promise(resolve => setTimeout(resolve, ms))
+// };
