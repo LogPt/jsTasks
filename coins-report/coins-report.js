@@ -4,7 +4,7 @@ const requestDASH = 'https://whattomine.com/coins/34.json?';
 
 // https: //whattomine.com/coins/34.json?hr=1290.0&p=3148.0&fee=0.0&cost=0.063&cost_currency=USD&hcost=0.0&span_br=&span_d=24
 
-const cost = 0.063;
+const cost = 0.067;
 const miners = [
   'MicroBT Whatsminer M20S 68T',
   'Canaan Avalon 1166 PRO 78Th',
